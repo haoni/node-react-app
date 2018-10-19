@@ -1,16 +1,12 @@
-const express = requide('express')
+const express = require('express')
 
 module.exports = function(server) {
     
     //Rotas.
-
     const router = express.Router()
-    server.use('/api', route)
+    server.use('/api', router)
 
     // Rotas do TODO
     const todoService = require('../api/todo/todoservice')
-    todoService.register(route, '/todos')
-
-    
-
+    todoService.register(router, '/todos')
 }
